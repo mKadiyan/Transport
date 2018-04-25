@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>My Transport System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table>
+    <tr th:each="enquiry : ${enquires}">
+        Hello == <td th:text="${enquiry}">keyvalue</td>
+    </tr>
+</table>
+</body>
+</html>

@@ -3,6 +3,7 @@ package com.transport.controller;
 import com.transport.model.Enquiry;
 import com.transport.service.EnquiryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,8 +20,10 @@ public class EnquiryController {
     }
 
     @GetMapping("/enquiries")
-    public List<Enquiry> getAllEnquiry(){
-        return enquiryService.getAllEnquiries();
+    public List<Enquiry> allEnquiries(Model model){
+        List<Enquiry> allEnquiries = enquiryService.getAllEnquiries();
+        model.addAttribute("enquiries", allEnquiries);
+        return allEnquiries;
     }
 
     @PostMapping("/enquiries")
